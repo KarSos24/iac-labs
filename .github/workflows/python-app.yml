@@ -41,10 +41,8 @@ jobs:
           cache: true
     - name: Install dependencies with Poetry
       run: |
-        poetry install
-      working-directory: ./example-app  
+        poetry install  
     
     - name: Test with pytest
       run: |
-        poetry run pytest
-      working-directory: ./example-app   
+        poetry run pytest   
