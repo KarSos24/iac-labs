@@ -37,7 +37,7 @@ jobs:
     - name: Setup Poetry Action
       uses: narumiruna/setup-poetry@v1.1.1
       with:
-          poetry-version: "^1.6.1"
+          poetry-version: "1.6.1"
           cache: true
     - name: Install dependencies with Poetry
       run: |
