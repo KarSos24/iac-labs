@@ -21,18 +21,20 @@ jobs:
       with:
         python-version: "3.11"
 
-    - name: Install dependencies with Poetry
+    - name: Setup Poetry
       uses: Gr1N/setup-poetry@v9
-      
+
     - name: Install dependencies with Poetry
       run: |
+        cd example-app
         poetry install
-        
+
     - name: Lint with flake8
       run: |
-        poetry run flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        poetry run flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        cd example-app
+        poetry run flake8 .
 
     - name: Test with pytest
       run: |
-        poetry run pytest -v --disable-warnings --cov
+        cd example-app
+        poetry run pytest
